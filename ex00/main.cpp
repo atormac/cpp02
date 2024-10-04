@@ -2,5 +2,7 @@
 
 int main(void)
 {
+	Fixed a;
+
 	return (0);
 }
