@@ -62,3 +62,22 @@ std::ostream &operator<<(std::ostream &os, Fixed const &f)
 	os << (float)f.toFloat();
 	return (os);
 }
+
+bool Fixed::operator>(const Fixed &f) const
+{
+	return this->_value > f._value;
+}
+
+Fixed &Fixed::max(Fixed &f1, Fixed &f2)
+{
+	if (f1 > f2)
+		return f1;
+	return f2;
+}
+
+Fixed &Fixed::min(Fixed &f1, Fixed &f2)
+{
+	if (f1 > f2)
+		return f2;
+	return f1;
+}
