@@ -23,6 +23,9 @@ class Fixed
 
 		Fixed &operator=(const Fixed &f);
 		bool operator>(const Fixed &f) const;
+		bool operator<(const Fixed &f) const;
+		bool operator>=(const Fixed &f) const;
+		bool operator<=(const Fixed &f) const;
 
 
 		static Fixed &max(Fixed &f1, Fixed &f2);

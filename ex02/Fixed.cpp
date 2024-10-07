@@ -63,9 +63,25 @@ std::ostream &operator<<(std::ostream &os, Fixed const &f)
 	return (os);
 }
 
+
 bool Fixed::operator>(const Fixed &f) const
 {
 	return this->_value > f._value;
+}
+
+bool Fixed::operator<(const Fixed &f) const
+{
+	return this->_value < f._value;
+}
+
+bool Fixed::operator>=(const Fixed &f) const
+{
+	return this->_value >= f._value;
+}
+
+bool Fixed::operator<=(const Fixed &f) const
+{
+	return this->_value <= f._value;
 }
 
 Fixed &Fixed::max(Fixed &f1, Fixed &f2)
