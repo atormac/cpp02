@@ -29,6 +29,10 @@ class Fixed
 		bool operator==(const Fixed &f) const;
 		bool operator!=(const Fixed &f) const;
 
+		Fixed operator+(const Fixed &f) const;
+		Fixed operator-(const Fixed &f) const;
+		Fixed operator*(const Fixed &f) const;
+		Fixed operator/(const Fixed &f) const;
 
 		static Fixed &max(Fixed &f1, Fixed &f2);
 		static Fixed &min(Fixed &f1, Fixed &f2);
