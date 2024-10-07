@@ -115,6 +115,18 @@ Fixed Fixed::operator/(const Fixed &f) const
 	return Fixed(this->toFloat() / f.toFloat());
 }
 
+Fixed &Fixed::operator++(void)
+{
+	++this->_value;
+	return *this;
+}
+
+Fixed &Fixed::operator--(void)
+{
+	--this->_value;
+	return *this;
+}
+
 
 Fixed &Fixed::max(Fixed &f1, Fixed &f2)
 {
