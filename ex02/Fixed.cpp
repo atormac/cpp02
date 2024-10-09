@@ -8,7 +8,7 @@ Fixed::Fixed(void)
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &f)
@@ -25,7 +25,7 @@ Fixed::Fixed(const int i)
 
 Fixed::Fixed(const float f)
 {
-	std::cout << "Float constructor called" << std::endl;
+	//std::cout << "Float constructor called" << std::endl;
 	this->_value = (int)roundf(f * (1 << this->_bits));
 }
 
@@ -115,6 +115,7 @@ Fixed Fixed::operator/(const Fixed &f) const
 	return Fixed(this->toFloat() / f.toFloat());
 }
 
+//prefix
 Fixed &Fixed::operator++(void)
 {
 	++this->_value;
@@ -127,17 +128,37 @@ Fixed &Fixed::operator--(void)
 	return *this;
 }
 
+//postfix
+Fixed Fixed::operator++(int)
+{
+	Fixed tmp = *this;
+	++this->_value;
+	return tmp;
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed tmp = *this;
+	--this->_value;
+	return tmp;
+}
 
 Fixed &Fixed::max(Fixed &f1, Fixed &f2)
 {
-	if (f1 > f2)
-		return f1;
-	return f2;
+	return (f1 > f2) ? f1 : f2;
 }
 
 Fixed &Fixed::min(Fixed &f1, Fixed &f2)
 {
-	if (f1 > f2)
-		return f2;
-	return f1;
+	return (f1 > f2) ? f2 : f1;
+}
+
+const Fixed &Fixed::max(Fixed const &f1, Fixed const &f2)
+{
+	return (f1 > f2) ? f1 : f2;
+}
+
+const Fixed &Fixed::min(Fixed const &f1, Fixed const &f2)
+{
+	return (f1 > f2) ? f2 : f1;
 }
