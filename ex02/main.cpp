@@ -25,6 +25,7 @@ int main(void)
 	std::cout << "a * b: " << a * b << std::endl;
 	std::cout << "a / b: " << a / b << std::endl;
 
+	std::cout << "c: " << c << std::endl;
 	std::cout << "++c: " << ++c << std::endl;
 	std::cout << "c++: " << c++ << std::endl;
 	std::cout << "c: " << c << std::endl;
